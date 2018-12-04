@@ -89,26 +89,31 @@ public class LeetCode_3 {
         // try to extend the range [i, j]
         for (int j = 0, i = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);
+                i = Math.max(map.get(s.charAt(j)), i);//包含了,则要重新计算i的下标
             }
-            ans = Math.max(ans, j - i + 1);
-            map.put(s.charAt(j), j + 1);
+            ans = Math.max(ans, j - i + 1);//
+            map.put(s.charAt(j), j + 1);//j的字符覆盖前面的
         }
         return ans;
     }
 
-    //独立却ASCII 128
+    //独立却ASCII 128,其实还是lengthOfLongestSubstring4的方法,只是map用ascii数组代替
     @Test
-    public int lengthOfLongestSubstring5(String s) {
+    public void lengthOfLongestSubstring5() {
+        String s="abcdeafghijklmnopqrstuvwxyz";
         int n = s.length(), ans = 0;
-        int[] index = new int[128]; // current index of character
+        int[] index = new int[128]; // current index of character,'A'==index[65],index[65]记录了字符串中'A'出现的位置,
         // try to extend the range [i, j]
         for (int j = 0, i = 0; j < n; j++) {
+            if(s.charAt(j)=='a'){
+                System.out.println("look");
+            }
             i = Math.max(index[s.charAt(j)], i);//s.charAt(j)字符,字符的index[ASCII] ,第一次i不动,如果重复,提前提前到该位置
             ans = Math.max(ans, j - i + 1);
             index[s.charAt(j)] = j + 1;//赋予位置
         }
-        return ans;
+        System.out.println(ans);
+//        return ans;
     }
 
     @Test
