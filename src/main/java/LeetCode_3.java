@@ -76,7 +76,7 @@ public class LeetCode_3 {
                 set.add(s.charAt(j++));
                 ans = Math.max(ans, j - i);
             } else {
-                set.remove(s.charAt(i++));
+                set.remove(s.charAt(i++));//窗口滑动的位置指示从原来左边的下标++1
             }
         }
         return ans;
@@ -89,7 +89,7 @@ public class LeetCode_3 {
         // try to extend the range [i, j]
         for (int j = 0, i = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);//包含了,则要重新计算i的下标
+                i = Math.max(map.get(s.charAt(j)), i);//包含了,则要重新计算i的下标       **优化点:一步滑动左边下标到和现在右边字符相同的位置
             }
             ans = Math.max(ans, j - i + 1);//
             map.put(s.charAt(j), j + 1);//j的字符覆盖前面的
