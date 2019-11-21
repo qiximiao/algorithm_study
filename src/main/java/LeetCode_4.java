@@ -12,6 +12,7 @@ public class LeetCode_4 {
         System.out.println(findMedianSortedArrays(nums1, nums2));
     }
 
+    //实际运行结果证明,该方法的速度和官方一致,但是复杂度是O(n/2),远离是组成一个新的数组,记录从小到大的数组,不符合官方
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         //判断数量偶数,奇数,判断找第几大的数
         //需要的下标
