@@ -1,4 +1,4 @@
-package leetcode.leetcode.editor.cn;//给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。
+package leetcode.leetcode.editor.cn.leetcode.editor.cn;//给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。
 //
 // 
 //

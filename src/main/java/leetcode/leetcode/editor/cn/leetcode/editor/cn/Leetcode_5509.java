@@ -1,4 +1,4 @@
-package leetcode.leetcode.editor.cn;
+package leetcode.leetcode.editor.cn.leetcode.editor.cn;
 
 import org.junit.Test;
 

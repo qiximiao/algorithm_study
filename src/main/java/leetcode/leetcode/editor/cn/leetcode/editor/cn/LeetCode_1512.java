@@ -1,4 +1,4 @@
-package leetcode.leetcode.editor.cn;//给你一个整数数组 nums 。
+package leetcode.leetcode.editor.cn.leetcode.editor.cn;//给你一个整数数组 nums 。
 //
 // 如果一组数字 (i,j) 满足 nums[i] == nums[j] 且 i < j ，就可以认为这是一组 好数对 。 
 //
