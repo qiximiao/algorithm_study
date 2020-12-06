@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {4, 1, 3, 7, 2};
+        int[] arr = {1,2,3,4};
         int[] arr2 = {4, 1, 3, 7, 2};
         quickSort(arr, 0, arr.length - 1);
         QuickSortTest(arr2, 0, arr.length - 1);
@@ -28,12 +28,12 @@ public class QuickSort {
         }
         int nowL = start, nowR = end;
         int key = arr[start];//待比较的值
-        while (nowL < nowR) {//一旦跳出循环nowL和nowR应该是相等的，内循环相等的时候就不执行了
-            while (nowL < nowR && arr[nowR] >= key) {//找到比arr[]lIndex大的
+        while (nowL < nowR) {//一旦跳出循环nowL和nowR应该是相等的，内循环相等的时候就不执行了，相等的时候是跳过的
+            while (nowL < nowR && arr[nowR] >= key) {//找到一个比key小的
                 nowR--;
             }
 
-            while (nowL < nowR && arr[nowL] <= key) {//找到比arr[]lIndex小的
+            while (nowL < nowR && arr[nowL] <= key) {//找到一个比key大的
                 nowL++;
             }
             if (nowL < nowR) {//只有在两边都找到了可交换的值时才会进入
@@ -45,8 +45,10 @@ public class QuickSort {
             }
         }
         //跳出来后nowL和nowR相等，此时这个位置是什么考虑一下吧
-        //要么最后一直nowR左移到结束了，左移经过的数都是比key大，左侧比基准数key大，右侧比基准数小，如果上次交换nowL在的数比key小
-        //要么nowR找到了一个比基准数key小的值,最后nowL定位到这个这个值，
+        //要么最后一直nowR到基准数位置
+        //要么右移到新的比key小的位置,如果有nowL左移，要么就是nowR位置，要么对换，如果不兑换就是一个比当前key小的位置
+        //或者nowR直接找到nowL,由于上次发生了兑换，此时已经是比key小的位置了
+        //最终的key调换，左边比较大或相等，右边比较小或相等，所在的位置<=key,即可以做交换
 
 
         //最后将基准为与i和j相等位置的数字交换
